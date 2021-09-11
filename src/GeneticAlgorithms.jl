@@ -1,13 +1,12 @@
-
 module GeneticAlgorithms
 
 # -------
+using ImportAll
 
-importall Base
+@importall(Base)
 
 export  Entity,
         GAmodel,
-
         runga,
         freeze,
         defrost,
@@ -16,7 +15,7 @@ export  Entity,
 
 # -------
 
-abstract Entity
+abstract type Entity end
 
 isless(lhs::Entity, rhs::Entity) = lhs.fitness < rhs.fitness
 
@@ -24,7 +23,7 @@ fitness!(ent::Entity, fitness_score) = ent.fitness = fitness_score
 
 # -------
 
-type EntityData
+mutable struct EntityData
     entity
     generation::Int
 
@@ -34,7 +33,7 @@ end
 
 # -------
 
-type GAmodel
+mutable struct GAmodel
     initial_pop_size::Int
     gen_num::Int
 
@@ -42,7 +41,7 @@ type GAmodel
     pop_data::Array{EntityData}
     freezer::Array{EntityData}
 
-    rng::AbstractRNG
+    #  rng::AbstractRNG
 
     ga
 

@@ -1,0 +1,7 @@
+name = "GeneticAlgorithms"
+uuid = "02f30dbc-fd01-460f-8dd0-4fe732c58056"
+authors = ["WestleyArgentum@gmail.com"]
+version = "0.1.0"
+
+[deps]
+ImportAll = "c65182e5-40f4-518f-8165-175b85689199"
